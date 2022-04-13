@@ -1,0 +1,13 @@
+<h1 class="text-center my-5"> Create New Playlist</h1>
+<form action="/spotify/createplaylist" method="post" class="w-50 m-auto">
+
+   <input type="text" name="p_name" class="form-control my-2" placeholder="Playlist Name">
+    <input type="text" name="p_desc" class="form-control my-2" placeholder="Playlist Description">
+    <select name="visibility" id="" class="form-select w-100 p-2 text-muted">
+        <option value="true" class="form-select">True</option>
+        <option value="false" class="form-select">False</option>
+    </select>
+    <br>
+ <input type="submit" value="Create" class="btn btn-success my-3">
+
+</form>

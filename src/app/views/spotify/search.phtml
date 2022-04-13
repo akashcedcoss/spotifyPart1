@@ -1,0 +1,153 @@
+<?php
+
+$album = $result->albums->items;
+$tracks = $result->tracks->items;
+$playlist = $result->playlists->items;
+$artist = $result->artists->items;
+$show = $result->shows->items;
+$episode = $result->episodes->items;
+
+?>
+
+<?php if($album) {
+  echo '<h1>Albums </h1> ';
+
+  foreach($album as $key){ ?>
+<div class="card mb-3 p-4 shadow p-3 mb-5 bg-white rounded">
+  <div class="row g-0 ">
+    <div class="col-md-4">
+      <img src="<?php echo $key->images[0]->url; ?>" class="img-fluid rounded-start" alt="..." width="200px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $key->name; ?></h5>
+        <h6 class="card-title"><?php echo $key->artists[0]->name; ?></h6>
+        <!-- <p class="card-text text-break">Release Date : <?php echo $key->release_date;  ?> </p> -->
+        <p class="card-text" class="text-muted">Type : <?php echo $key->type;  ?> </p>
+        <a href="/spotify/addplaylist?track=<?php echo $key->uri; ?>">Add To Playlist</a>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } 
+}?>
+
+<?php if($tracks) {
+  echo '<h1>Tracks </h1> ';
+
+ foreach ($tracks as $key => $val) { ?>
+<div class="card mb-3 p-4 shadow p-3 mb-5 bg-white rounded">
+  <div class="row g-0 ">
+    <div class="col-md-4">
+      <img src="<?php echo $val->album->images[0]->url; ?>" class="img-fluid rounded-start" alt="..." width="200px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $val->name; ?></h5>
+        <h6 class="card-title"><?php echo $val->artists[0]->name; ?></h6>
+        <p class="card-text text-break">Release Date : <?php echo $val->album->release_date;  ?> </p>
+        <p class="card-text" class="text-muted">Type : <?php echo $val->type;  ?> </p>
+        <a href="/spotify/addplaylist?track=<?php echo $val->uri; ?>">Add To Playlist</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<?php } 
+}?>
+
+<?php if($playlist) {
+  echo '<h1>Playlists </h1> ';
+
+  foreach($playlist as $key){ ?>
+<div class="card mb-3 p-4 shadow p-3 mb-5 bg-white rounded">
+  <div class="row g-0 ">
+    <div class="col-md-4">
+      <img src="<?php echo $key->images[0]->url; ?>" class="img-fluid rounded-start" alt="..." width="200px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $key->name; ?></h5>
+        <h6 class="card-title"><?php echo ""; ?></h6>
+        <p class="card-text text-break">Release Date : <?php echo ""; ?> </p>
+        <p class="card-text" class="text-muted">Type : <?php echo $key->type;  ?> </p>
+        <a href="/spotify/addplaylist?track=<?php echo $key->uri; ?>">Add To Playlist</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<?php } 
+}?>
+
+<?php if($artist) {
+  echo '<h1>Artists </h1> ';
+
+ foreach ($artist as $key) { ?>
+<div class="card mb-3 p-4 shadow p-3 mb-5 bg-white rounded">
+  <div class="row g-0 ">
+    <div class="col-md-4">
+      <img src="<?php echo  $key->images[0]->url; ?>" class="img-fluid rounded-start" alt="..." width="200px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $key->name; ?></h5>
+        <h6 class="card-title"><?php echo ""; ?></h6>
+        <p class="card-text text-break">Release Date : <?php "";  ?> </p>
+        <p class="card-text" class="text-muted">Type : <?php echo $key->type;  ?> </p>
+        <a href="/spotify/addplaylist?track=<?php echo $key->uri; ?>">Add To Playlist</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<?php } 
+}?>
+
+<?php if($show) {
+  echo '<h1>Shows </h1> ';
+
+ foreach ($show as $key) { ?>
+<div class="card mb-3 p-4 shadow p-3 mb-5 bg-white rounded">
+  <div class="row g-0 ">
+    <div class="col-md-4">
+      <img src="<?php echo ""; ?>" class="img-fluid rounded-start" alt="..." width="200px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo ""; ?></h5>
+        <h6 class="card-title"><?php echo ""; ?></h6>
+        <p class="card-text text-break">Release Date : <?php echo "";  ?> </p>
+        <p class="card-text" class="text-muted">Type : <?php echo "Shows";  ?> </p>
+        <a href="/spotify/addplaylist?track=<?php echo $key->uri; ?>">Add To Playlist</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<?php } 
+}?>
+
+<?php if($episode) {
+  echo '<h1>Shows </h1> ';
+
+ foreach ($episode as $key) { ?>
+<div class="card mb-3 p-4 shadow p-3 mb-5 bg-white rounded">
+  <div class="row g-0 ">
+    <div class="col-md-4">
+      <img src="<?php echo ""; ?>" class="img-fluid rounded-start" alt="..." width="200px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo ""; ?></h5>
+        <h6 class="card-title"><?php echo ""; ?></h6>
+        <p class="card-text text-break">Release Date : <?php echo "";  ?> </p>
+        <p class="card-text" class="text-muted">Type : <?php echo "Shows";  ?> </p>
+        <a href="/spotify/addplaylist?track=<?php echo $key->uri; ?>">Add To Playlist</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<?php } 
+}?>

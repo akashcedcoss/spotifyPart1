@@ -1,0 +1,24 @@
+<?php
+    $data = $result->items;
+    $this->session->playlist = $data;
+?>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Playlist Name</th>
+    </tr>
+  </thead>
+  <?php foreach($data as $key => $val) { ?>
+  <tbody>
+    <tr>
+      <th scope="row"><?php echo $val->id; ?></th>
+      <td><a href="/spotify/playlistitem?name=<?php echo $val->name; ?>&id=<?php echo $val->id?>"><?php echo $val->name; ?></a></td>
+    </tr>
+  </tbody>
+  <?php } ?>
+</table>
+
+<a href="createplaylist" class="btn btn-primary">Create Playlist</a>
+

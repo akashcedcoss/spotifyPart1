@@ -1,0 +1,26 @@
+<?php
+
+?>
+<?php echo $this->tag->form("spotify/search"); ?>
+    
+        <p>
+            <label for="name"></label>
+            <?php echo $this->tag->textField("name"); ?>
+        </p>
+        <p>
+            <input type="hidden" name="token" value="<?php echo $result['access_token'] ?>">
+        </p>
+        <p>
+            <input type="checkbox" name="filter[]" id="" value="album">Album
+            <input type="checkbox" name="filter[]" id="" value="artist">Artist
+            <input type="checkbox" name="filter[]" id="" value="playlist">Playlist
+            <input type="checkbox" name="filter[]" id="" value="track">Track
+            <input type="checkbox" name="filter[]" id="" value="show">Show
+            <input type="checkbox" name="filter[]" id="" value="episode">Episode
+
+        </p>
+        <p>
+            <?php echo $this->tag->submitButton(["Search", 'name'=>'searchbtn']); ?>
+        </p>
+    
+    </form>

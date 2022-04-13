@@ -1,0 +1,25 @@
+<?php
+
+$data = $result->items;
+$id = $result->items[0]->track->uri;
+$playlist_id = $this->request->getQuery('id');
+
+?>
+
+
+<table class="table table-striped">
+    <tr>
+    <th> S. No. </th>
+    <th> Name </th>
+    <th>Action</th>
+</tr>
+
+<?php foreach ($data as $key => $val) { ?>
+<tr>
+    <td><?php echo $key+1; ?></td>
+    <td><?php echo $val->track->name; ?></td>    
+    <td><a href="/spotify/delete?id=<?php echo $id; ?>&playlist=<?php echo $playlist_id; ?>" class="text-danger" >Remove</a></td>
+</tr>
+
+<?php } ?>    
+</table>
