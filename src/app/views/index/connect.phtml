@@ -1,0 +1,10 @@
+<?php
+
+$id = 'c4e8a7adef2a49118f7cdf746eca525a';
+$secret = 'e5cc1a64c27d43ba89cb85cba7c3c26b';
+$redirect_uri = "http://localhost:8080/spotify/token";
+$scope = 'playlist-modify-public playlist-read-private playlist-modify-private';
+$url = "https://accounts.spotify.com/authorize?client_id=$id&response_type=code&redirect_uri=$redirect_uri&scope=$scope";
+
+?>
+<a href="<?php echo $url;?>" class="btn btn-primary">Connect</a>

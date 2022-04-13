@@ -7,9 +7,8 @@
 </head>
 <body>
 <div class="container">
-    <?php echo $this->getContent();
-$this->session->token = "BQCt6lltkG0A_2QjX9Nd32tK7oIYC24lGS-9tq3hsfCIRbEMvHb0GxEN5LX8PFbpXia3SRis8-LoCqcw4Ns_fQKnJ7FsNy25U31m4QyTy6IQmqCYWKbcYEnDIYEcqY_Dkj_CF7ST6zZrbL614PR8Xw1r5XdEKbdfvNhn0KAd-jEOgEDJ4jyn5Wz_yKjMSutdoWO8gvL-jioQ8__6URoBXjZEYtnfGt2pN--25CDp4RGEzQ";
-
+    <?php echo $this->getContent();  
+    $this->session->token = $this->session->response->access_token;
     ?>
 </div>
 </body>

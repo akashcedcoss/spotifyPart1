@@ -9,5 +9,7 @@ class Users extends Model
     public $email;
     public $username;
     public $password;
+    public $accesstoken;
+    public $refreshtoken;
 
 }

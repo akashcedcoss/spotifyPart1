@@ -24,3 +24,27 @@
         </p>
     
     </form>
+
+    <div class="recommendation">
+  <?php
+
+  echo '<pre>';
+  $data = $recomendation->tracks;
+  ?>
+</div>
+
+<h1 class="text-center my-5">Recommendation</h1>
+<div class="row w-75 m-auto">
+
+<?php foreach ($data as $key => $val) {
+?>
+  <div class="card col-sm-3 col-md-3" style="width: 18rem;">
+    <img class="card-img-top" src="<?php echo $val->album->images[0]->url; ?>" width="100px" height="200px" alt="Card image cap">
+    <div class="card-body">
+      <h3><?php echo $val->album->name; ?></h3>          
+    </div>
+  </div>
+<?php } ?>
+
+</div>
+    
